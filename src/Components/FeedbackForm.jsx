@@ -7,6 +7,15 @@ const FeedbackForm = () => {
     email: "",
     feedback: "",
   });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
   return (
     <>
       <nav>Tell Us What You Think</nav>
