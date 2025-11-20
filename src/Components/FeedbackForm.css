@@ -1,65 +1,158 @@
-nav{
-  background-color: #ed5484;
-  color: white;
-  text-align: center;
-  font-size: 30px;
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
+
+body {
+  font-family: "Orbitron", sans-serif;
+  background: linear-gradient(45deg, #121212, #1a1a1a, #242424);
+  color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
 }
+
+nav {
+  background-color: transparent;
+  color: #00aaff;
+  text-align: center;
+  font-size: 2.5em;
+  padding: 20px 0;
+  text-shadow: 0 0 10px #00aaff, 0 0 20px #00aaff;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
 .feedback-form {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-    border:1px solid #ecb4c6;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  padding: 40px;
+  margin: 120px auto 40px auto;
+  max-width: 600px;
+  width: 90%;
+  transition: transform 0.3s ease;
+}
+
+.feedback-form:hover {
+  transform: scale(1.02);
+}
+
+.feedback-form h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+  color: #00aaff;
+  text-align: center;
+}
+
+.feedback-form p {
+  font-size: 1.1em;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.feedback-form input[type="text"],
+.feedback-form input[type="email"],
+.feedback-form textarea {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 15px;
+  font-size: 1em;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid #00aaff;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.feedback-form input[type="text"]:focus,
+.feedback-form input[type="email"]:focus,
+.feedback-form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 15px #00aaff;
+  border-color: #00ddff;
+}
+
+.feedback-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.rating-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.rating-group span {
+  font-size: 1.2em;
+  color: #00aaff;
+  margin-bottom: 15px;
+}
+
+.rating-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-direction: row-reverse;
+}
+
+.rating-container input[type="radio"] {
+  display: none;
+}
+
+.rating-container label {
+  font-size: 1.5em;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.rating-container input[type="radio"]:checked ~ label,
+.rating-container:hover input[type="radio"]:hover ~ label {
+  color: #00aaff;
+  text-shadow: 0 0 5px #00aaff, 0 0 10px #00aaff;
+}
+
+.rating-container input[type="radio"]:hover + label {
+  color: #00ddff;
+}
+
+.rating-container input[type="radio"]:checked + label {
+  color: #00ddff;
+}
+
+.feedback-form button {
+  background: linear-gradient(45deg, #00aaff, #00ddff);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 15px 25px;
+  font-size: 1.2em;
+  font-family: "Orbitron", sans-serif;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.feedback-form button:hover {
+  box-shadow: 0 0 20px #00aaff;
+  transform: translateY(-3px);
+}
+
+@media only screen and (max-width: 600px) {
+  .feedback-form {
+    padding: 25px;
+    margin-top: 100px;
   }
-  
-  .feedback-form h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
+  nav {
+    font-size: 2em;
   }
-  
-  .feedback-form p {
-    font-size: 16px;
-    margin-bottom: 20px;
-  }
-  
-  .feedback-form input[type="text"],
-  .feedback-form input[type="email"],
-  .feedback-form textarea {
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  
-  .feedback-form textarea {
-    resize: vertical;
-  }
-  
-  .feedback-form button {
-    background-color: #ff0051;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 12px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  .feedback-form button:hover {
-    background-color: #d94a77;
-  }
-  
-  /* Media query for smaller screens */
-  @media only screen and (max-width: 600px) {
-    .feedback-form {
-      width: 90%;
-    }
-  }
-  
+}

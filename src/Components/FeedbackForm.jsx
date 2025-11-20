@@ -66,61 +66,55 @@ const FeedbackForm = () => {
           value={formData.feedback}
           onChange={handleChange}
         ></textarea>
-        <div style={{ display: "flex", gap: "10px", flexDirection: "column" }}>
+        <div className="rating-group">
           <span>Rate Us:</span>
-          <p>
+          <div className="rating-container">
             <input
-              type="radio"
-              name="rating"
-              value="1"
-              onChange={handleChange}
-              checked={formData.rating === "1"}
-            />{" "}
-            1
-          </p>
-          <p>
-            {" "}
-            <input
-              type="radio"
-              name="rating"
-              value="2"
-              onChange={handleChange}
-              checked={formData.rating === "2"}
-            />{" "}
-            2
-          </p>
-          <p>
-            {" "}
-            <input
-              type="radio"
-              name="rating"
-              value="3"
-              onChange={handleChange}
-              checked={formData.rating === "3"}
-            />{" "}
-            3
-          </p>
-          <p>
-            {" "}
-            <input
-              type="radio"
-              name="rating"
-              value="4"
-              onChange={handleChange}
-              checked={formData.rating === "4"}
-            />{" "}
-            4
-          </p>
-          <p>
-            <input
+              id="rating-5"
               type="radio"
               name="rating"
               value="5"
               onChange={handleChange}
               checked={formData.rating === "5"}
-            />{" "}
-            5
-          </p>
+            />
+            <label htmlFor="rating-5">★</label>
+            <input
+              id="rating-4"
+              type="radio"
+              name="rating"
+              value="4"
+              onChange={handleChange}
+              checked={formData.rating === "4"}
+            />
+            <label htmlFor="rating-4">★</label>
+            <input
+              id="rating-3"
+              type="radio"
+              name="rating"
+              value="3"
+              onChange={handleChange}
+              checked={formData.rating === "3"}
+            />
+            <label htmlFor="rating-3">★</label>
+            <input
+              id="rating-2"
+              type="radio"
+              name="rating"
+              value="2"
+              onChange={handleChange}
+              checked={formData.rating === "2"}
+            />
+            <label htmlFor="rating-2">★</label>
+            <input
+              id="rating-1"
+              type="radio"
+              name="rating"
+              value="1"
+              onChange={handleChange}
+              checked={formData.rating === "1"}
+            />
+            <label htmlFor="rating-1">★</label>
+          </div>
         </div>
         <button type="submit">Submit Feedback</button>
       </form>
