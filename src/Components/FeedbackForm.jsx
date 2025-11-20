@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import "./FeedbackForm.css"; // Import CSS for styling
 
 const FeedbackForm = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    feedback: "",
+  });
   return (
     <>
       <nav>Tell Us What You Think</nav>
